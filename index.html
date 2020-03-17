@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Basic Javascript Examples</title>
+	<meta charset="UTF-8" />
+	<link ref="stylesheet" href="src/styles.css" />
+</head>
+
+<body>
+	<h2>Comments in JavaScript</h2>
+	<div class="slide">
+			<p class="info">Comments are lines of code that JavaScript will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what that code does.</p>
+			<p class="info">There are two ways to write comments in JavaScript:</p>
+			<div>
+				<blockquote>// This is an in-line comment.</blockquote>
+			</div>
+			<p class="info">You can make a multi-line comment beginning with <code>/*</code> and ending with <code>*/</code>:</p>
+			<div>
+				<blockquote>/* This is a<br>multi-line comment */</blockquote>
+			</div>
+	</div>
+	<h2>Variables in JavaScript</h2>
+	<div class="slide">
+			<p class="info"><dfn>Data types</dfn> in Javascript are <code>undefined</code>, <code>null</code>, <code>boolean</code>, <code>string</code>, <code>number</code> and <code>object</code>.</p>
+			<p class="info"><dfn>Variables</dfn> allow computers to store and manipulate data in a dynamic fashion. Any of the seven data types may be stored in a variable.</p>
+			<p class="info"><code>Variables</code> are a simple name to represent the data we want to refer to. <code>Variables</code> can store different values at different times.</p>
+			<p class="info">We create or <dfn>declare</dfn> a variable by putting the keyword <code>var</code> in front of it, like so:</p>
+			<div>
+				<blockquote>var myVariable;</blockquote>
+			</div>
+			<p class="info">creates a <code>variable</code> called <code>myVariable</code>.</p>
+			<p class="info"><code>Variable</code> names can contain numbers, letters, and <code>$</code> or <code>_</code>, but can nor contain spaces or start with a number.</p>
+			<p class="info">When JavaScript variables are declared, they have an initial value of <code>undefined</code>. </p>
+			<p class="info">If you do a mathematical operation on an <code>undefined</code> variable your result will be <code>NaN</code> which means <dfn>"Not a Number"</dfn>.</p>
+			<p class="info">If you concatenate a string with an <code>undefined</code> variable, you will get a literal <dfn>string</dfn> of <code>"undefined"</code>.</p>
+			<p class="info">In JavaScript all variables and function names are case sensitive.</p>
+	</div>
+
+	<h2>Increment/Decrement a Number with JavaScript</h2>
+	<div class="slide">
+			<p class="info">You can easily <dfn>increment</dfn> or add one to a variable with the <code>++</code> operator.</p>
+			<p class="info"><code>i++;</code> is the equivalent of <code>i = i + 1;</code></p>
+			<p class="info">You can easily <dfn>decrement</dfn> or add one to a variable with the <code>--</code> operator.</p>
+			<p class="info"><code>i--;</code> is the equivalent of <code>i = i - 1;</code></p>
+	</div>
+
+	<h2>Compound Assignment</h2>
+	<div class="slide">
+		<p class="info">We use assignments to modify the contents of a variable. Everything to the right of the equals sign is evaluated first, so we can say:</p>
+		<p class="info"><code>myVar = myVar + 5;</code></p>
+		<p class="info">Because this is a common pattern, there are operators which do both a mathematical operation and assignment in one step.</p>
+	  <div><blockquote>var myVar1 = 1;<br>myVar1 += 5; // myVar1 = myVar1 + 5;<br>console.log(myVar1); // Returns 6</blockquote></div>
+		<div><blockquote>var myVar2 = 10;<br>myVar -= 5; // myVar2 = myVar2 - 5;<br>console.log(myVar2); // Returns 5</blockquote></div>
+		<div><blockquote>var myVar3 = 2;<br>myVar3 *= 5; // myVar3 = myVar3 * 5; <br>console.log(myVar3); // Returns 10</blockquote></div>
+	</div>
+
+	<h2>Strings: Escaping, Concatenating, Find Length</h2>
+	<div class="slide">
+		<p class="info">A string you must start and end with a single or double quote. </p>
+		<p class="info">When you need a literal quote: <code>"</code> or <code>'</code> inside of your string you need to <dfn>escape</dfn> it.</p>
+		<p class="info">In JavaScript, you can <dfn>escape</dfn> a quote by placing a <dfn>backslash</dfn> (<code>\</code>) in front of the quote.</p>
+		<div>
+				<blockquote>
+					var sampleStr = "Andrei said, \"students are learning JavaScript\"."; <br><br>
+				 /* <br>
+				  Printing this to the console, you would get: Andrei said, "students are learning JavaScript". <br>
+				 */
+				</blockquote>
+		</div>
+		<hr>
+		<p class="info">The <code>+</code> operator can be used with a <code>String</code> value, and it is called the <dfn>concatenation</dfn> operator.</p>
+		<div>
+			<blockquote>var concatString = 'My name is Mircea,' + ' and I\'m a front-end developer.'</blockquote>
+		</div>
+		<p class="info">We can also use the <code>+=</code> operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable.</p>
+		<div>
+			<blockquote>
+				var concatString = 'My name is Mircea,'; <br>
+			 	concatString += ' and I\'m a front-end developer.';</blockquote>
+		</div>
+		<hr>
+		<p class="info">You can find the length of a <code>String</code> value by writing <code>.length</code> after the string variable or string literal.</p>
+		<div>
+			<blockquote>
+				var concatString = 'My name is Ioan'; <br>
+			 	console.log(concatString.length); // 15 </blockquote>
+		</div>
+		<p class="info"><code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.</p>
+		<p class="info">In JavaScript, <dfn>Zero-based</dfn> indexing is used. It means the first character will be at index 0.</p>
+	</div>
+
+
+	<h2>Boolean Values</h2>
+	<div class="slide">
+		<p class="info"><code>Booleans</code> can only be one of two values: <code>true</code> or <code>false</code>. and are never written with quotes.</p>
+		<p class="info">The strings <code>"true"</code> and <code>"false"</code> are not <code>Boolean</code>.</p>
+	</div>
+
+	<h2>JavaScript Arrays</h2>
+	<div class="slide">
+		<p class="info">In <code>array</code> variables, we can store more pieces of data in one variable.</p>
+		<p class="info">An array declaration starts with <code>[</code>, end it with <code>]</code> and a comma between each entry: </p>
+		<p class="info"><code>var house = ["basement", "first floor", "second floor"];</code>.</p>
+		<br>
+		<p class="info"><dfn>Multi-dimensional Array<dfn> are actualy nested arrays: </p>
+		<div>
+			<blockquote>
+				var dogBreeds = [ <br> 
+				                   &nbsp;&nbsp;["Akita", "medium", 300], <br>
+													 &nbsp;&nbsp;["Beagle", "small", 200], <br> 
+													 &nbsp;&nbsp;["Sheepdog", "big", 800] <br>
+												]; <br>
+			</blockquote>
+		</div>
+		<p class="info">We can access the data inside arrays using <code>indexes</code>.</p>
+		<p class="info">Array indexes are written in the bracket notation, and they are specifying an entry in the array. </p>
+		<p class="info">Arrays use <dfn>zero-based</dfn> indexing, so the first element in an array is index <code>0</code>.</p>
+		<p class="info">There shouldn't be any spaces between the array name and the square brackets, like <code>array [0]</code>. <br>
+										Although JavaScript is able to process this correctly, this may confuse others reading your code.</p>
+
+		<p class="info">Entries of arrays are <dfn>mutable</dfn> and can be changed freely.</p>
+		<div><blockquote>var myArray = [2,4,6];<br>myArray[0] = 5; // equals [5,4,6]</blockquote></div>
+		<br>
+		<br>
+		<p class="info">Append data to the end of an array is done via the <code>push()</code> function. <code>.push()</code> takes one or more <dfn>parameters</dfn> and "pushes" them onto the end of the array.</p>
+
+		<div><blockquote>var myArray = [5, 4, 6];<br>myArray.push(7);<br>// myArray is now [5, 4, 6, 7]</blockquote></div>
+
+		<p class="info">Another way to change the data in an array is with the <code>.pop()</code> function.</p>
+		<p class="info"><code>.pop()</code> is used to remove a value off of the end of an array and returns the removed value so that we can store it by assigning it to a variable. 
+					In other words, <code>.pop()</code> removes the last element from an array and returns that element.</p>
+		<div><blockquote>var myArray = [5, 4, 6, 7];<br>var last = myArray.pop();<br><br> console.log(myArray); <br> // myArray is now [5, 4, 6] <br><br> console.log(last); <br> // last is 7 </blockquote></div>
+		<p class="info">To remove the first element from an array we use <code>.shift()</code>. 
+		        It works just like <code>.pop()</code>, except it removes the first element.</p>
+		<div><blockquote>var myArray = [5, 4, 6];<br>var first = myArray.shift();<br><br> console.log(myArray); <br> // myArray is now [4, 6] <br><br> console.log(first); <br> // first is 5 </blockquote></div>
+
+		<p class="info"><code>.unshift()</code> works exactly like <code>.push()</code>, but instead of adding the element at the end of the array, <code>unshift()</code> adds the element at the beginning of the array.</p>
+		<div><blockquote>var myArray = [4, 6];<br>myArray.unshift("five");<br><br> console.log(myArray); <br> // myArray is now ["five", 4, 6]</blockquote></div>
+	</div>
+
+	<h2>JavaScript Objects</h2>
+		<div class="slide">
+			<p class="info">Objects are similar to <code>arrays</code>, except that instead of using indexes to access and modify their data, you access the data in objects through what are called <code>properties</code>.</p>
+			<p class="info">Objects are useful for storing data in a structured way, and can represent real world objects.</p>
+			<div>
+				<blockquote>var dog = {<br>&nbsp;&nbsp;"name": "Beagle",<br>&nbsp;&nbsp;"legs": 4,<br>&nbsp;&nbsp;"tails": 1,<br>&nbsp;&nbsp;"colors": ["white", "brown"]<br>};</blockquote>
+			</div>
+			<p class="info">You can also use numbers as properties. 
+			<strong>You can even omit the quotes for single-word string properties</strong>, as follows:</p>
+			<div><blockquote>var car = {<br>&nbsp;&nbsp;make: "Ford",<br>&nbsp;&nbsp;5: "five",<br>&nbsp;&nbsp;"model": "focus",<br>&nbsp;&nbsp;"color of car": "grey" <br>};</blockquote></div>
+			<p class="info">However, if your object has any non-string properties, JavaScript will automatically typecast them as strings.</p>
+			
+			<p class="info">There are two ways to access the properties of an object: dot notation (<code>.</code>) and bracket notation (<code>[]</code>).</p>
+			<p class="info">Dot notation is what you use when you know the name of the property you're trying to access ahead of time.</p>
+			<div><blockquote>car.model;  // focus </blockquote></div>
+			<p class="info">The second way to access the properties of an object is bracket notation (<code>[]</code>). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.</p>
+			<div><blockquote>car["color of car"];  // grey </blockquote></div>
+			<p class="info">Another use of bracket notation on objects is to access a property which is stored as the value of a variable. 
+				This can be very useful for iterating through an object's properties or when accessing a lookup table.</p>
+			<div><blockquote>var carModelProp = "model";<br> car[carModelProp];  // focus </blockquote></div>
+			<p class="info">Note that we do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em> of the variable.</p>
+
+			<p class="info">You can update an object's properties at any time just like you would update any other variable. 
+			You can use either dot or bracket notation to update.</p>
+			<div><blockquote>car.make = "BMW"; <br> car.model = "X5";  <br> car["color of car"] = "black"; </blockquote></div>
+			<p class="info">You can add new properties to an object, similar to the way we update existing ones.</p>
+			<div><blockquote>car.weels = 5; <br> car["spare weels"] = 1; </blockquote></div>
+			<p class="info">We can also delete properties from objects:</p>
+			<div><blockquote>delete car.weels; <br> delete car["spare weels"]; </blockquote></div>
+			<p class="info">Sometimes we want to check if a property of a given object exists or not. 
+			To do this we can use the <code>.hasOwnProperty(propname)</code> method of objects to determine if that object has the given property name. 
+			<code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.</p>
+			<div><blockquote>car.hasOwnProperty("model"); // true <br>car.hasOwnProperty("weels"); // false</blockquote></div>
+			<br>
+			<br>
+			<p class="info">A JavaScript object allows arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, <dfn>functions</dfn>, and other <dfn>objects</dfn>.</p>
+			<p class="info"><a href="http://www.json.org/" target="_blank">JavaScript Object Notation</a> or <code>JSON</code> is a related data interchange format used to store complex data.</p>
+			<div>
+				<blockquote>
+				var complexObj = { <br>
+				&nbsp;"id": "0001",<br>
+				&nbsp;"type": "donut",<br>
+				&nbsp;"name": "Cake",<br>
+				&nbsp;"ppu": 0.55,<br>
+				&nbsp;"batters": {<br>
+				&nbsp;&nbsp;	"batter": [<br>
+				&nbsp;&nbsp;&nbsp;		{ "id": "1001", "type": "Regular" },<br>
+				&nbsp;&nbsp;&nbsp;			{ "id": "1002", "type": "Chocolate" },<br>
+				&nbsp;&nbsp;&nbsp;		{ "id": "1003", "type": "Blueberry" },<br>
+				&nbsp;&nbsp;&nbsp;			{ "id": "1004", "type": "Devil's Food" }<br>
+				&nbsp;&nbsp;			]<br>
+				&nbsp;	},<br>
+				"topping": [<br>
+				&nbsp;&nbsp;	{ "id": "5001", "type": "None" },<br>
+				&nbsp;&nbsp;	{ "id": "5002", "type": "Glazed" },<br>
+				&nbsp;&nbsp;			{ "id": "5005", "type": "Sugar" },<br>
+				&nbsp;&nbsp;		{ "id": "5007", "type": "Powdered Sugar" },<br>
+				&nbsp;&nbsp;		{ "id": "5006", "type": "Chocolate with Sprinkles" },<br>
+				&nbsp;&nbsp;	{ "id": "5003", "type": "Chocolate" },<br>
+				&nbsp;&nbsp;	{ "id": "5004", "type": "Maple" }<br>
+				&nbsp;]<br>
+				};
+				</blockquote>
+			</div>
+
+	<h2>If Statements</h2>
+	<div class="slide">
+		<p class="info"><code>If</code> statements are used to make decisions in code. 
+		The keyword <code>if</code> tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as <code>Boolean</code> conditions and they may only be <code>true</code> or <code>false</code>.</p>
+		<div><blockquote>if (myCondition) {<br>&nbsp;&nbsp;&nbsp;&nbsp; return "It was true";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return "It was false";<br>}</blockquote></div>
+
+		<h3>Logical Order in If Else Statements</h3>
+		<p class="info">Order is important in <code>if</code>, <code>else if</code> statements.</p>
+		<p class="info">The function is executed from top to bottom so you will want to be careful of what statement comes first.</p>
+		<div style="width: 50%; float:left;"><blockquote>function foo(x) {<br>&nbsp;&nbsp;if (x &lt; 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Less than one";<br>&nbsp;&nbsp;} else if (x &lt; 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Less than two";<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Greater than or equal to two";<br>&nbsp;&nbsp;}<br>}</blockquote></div>
+		<div style="width: 50%; float:right;"><blockquote>function bar(x) {<br>&nbsp;&nbsp;if (x &lt; 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Less than two";<br>&nbsp;&nbsp;} else if (x &lt; 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Less than one";<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Greater than or equal to two";<br>&nbsp;&nbsp;}<br>}</blockquote></div>
+		<div style="clear: both;"></div>
+		<div><blockquote>foo(0) // "Less than one"<br>bar(0) // "Less than two"</blockquote></div>
+	</div>
+	 
+	<h2>Equality vs Strict Equality Operator </h2>
+	<div class="slide">
+		<p class="info">The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.</p>
+		<p class="info">In order for JavaScript to compare two different <code>data types</code> (for example, <code>numbers</code> and <code>strings</code>), it must convert one type to another. This is known as "Type Coercion". Once it does, however, it can compare terms as follows:</p>
+		<div><blockquote>1   ==  1    // true<br>1   ==  2    // false<br>1   == '1'   // true<br>"3"  ==  3    // true</blockquote></div>
+		<p class="info">Strict equality (<code>===</code>) is the counterpart to the equality operator (<code>==</code>). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.</p>
+		<div><blockquote>3 === 3   // true<br>3 === '3' // false</blockquote></div>
+	</div>
+
+	<h2>Inequality vs Strict Inequality Operator </h2>
+	<div class="slide">
+		<p class="info">The inequality operator (<code>!=</code>) is the opposite of the equality operator. It means "Not Equal" and returns <code>false</code> where equality would return <code>true</code> and <em>vice versa</em>. Like the equality operator, the inequality operator will convert data types of values while comparing.</p>
+		<div><blockquote>1 != 2      // true<br>1 != "1"    // false<br>1 != '1'    // false<br>1 != true   // false<br>0 != false  // false</blockquote></div>
+		<p class="info">The strict inequality operator (<code>!==</code>) is the logical opposite of the strict equality operator. It means "Strictly Not Equal" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.</p>
+		<div><blockquote>3 !== 3   // false<br>3 !== '3' // true<br>4 !== 3   // true</blockquote></div>
+	</div>
+
+	<h2>Logical Operators: AND (&&)</h2>
+	<div class="slide">
+		<p class="info">Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (<code>&amp;&amp;</code>) returns <code>true</code> if and only if the <dfn>operands</dfn> to the left and right of it are true.</p>
+		<div style="width: 50%; float:left;"><blockquote>if (num &gt; 5) {<br>&nbsp;&nbsp;if (num &lt; 10) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Yes";<br>&nbsp;&nbsp;}<br>}<br>return "No";</blockquote></div>
+		<div style="width: 50%; float:right;"><blockquote>if (num &gt; 5 &amp;&amp; num &lt; 10) {<br>&nbsp;&nbsp;return "Yes";<br>}<br>return "No";</blockquote></div>
+		<div style="clear: both;"></div>
+	</div>
+
+	<h2>Logical Operators: OR (||)</h2>
+	<div class="slide">
+		<p class="info">The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if either of the <dfn>operands</dfn> is <code>true</code>. Otherwise, it returns <code>false</code>.</p>
+		<div style="width: 50%; float:left;"><blockquote>if (num &gt; 10) {<br>&nbsp;&nbsp;return "No";<br>}<br>if (num &lt; 5) {<br>&nbsp;&nbsp;return "No";<br>}<br>return "Yes";</blockquote></div>
+		<div style="width: 50%; float:right;"><blockquote>if (num &gt; 10 || num &lt; 5) {<br>&nbsp;&nbsp;return "No";<br>}<br>return "Yes";</blockquote></div>
+		<div style="clear: both;"></div>
+	</div>
+
+
+	<h2>Switch Statements</h2>
+	<div class="slide">
+		<p class="info">A <code>switch</code> statement tests a value and can have many <code>case</code> statements which define various possible values. 
+		Statements are executed from the first matched <code>case</code> value until a <code>break</code> is encountered.</p>
+		<p class="info">In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. 
+		Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> statements are found. 
+		Think of it like the final <code>else</code> statement in an <code>if/else</code> chain.</p>
+		<div><blockquote>switch(val) {<br>&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;case 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = "1, 2, or 3";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case 4:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = "4 alone";<br>&nbsp;&nbsp;...<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;defaultStatement;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;}</blockquote></div>
+	</div>
+	
+	<h2>While Loops</h2>
+	<div class="slide">
+		<p class="info">It is called a "<code>while</code>" loop because it runs "while" a specified condition is true and stops once that condition is no longer true.</p>
+		<div><blockquote>var ourArray = [];<br>var i = 0;<br>while(i &lt; 5) {<br>&nbsp;&nbsp;ourArray.push(i);<br>&nbsp;&nbsp;i++;<br>}</blockquote></div>
+	</div>
+	
+	<h2>For Loops</h2>
+	<div class="slide">
+		<p class="info">The most common type of JavaScript loop is called a "<code>for loop</code>" because it runs "for" a specific number of times.</p>
+		<div><blockquote>var ourArray = [];<br>for (var i = 0; i &lt; 5; i++) {<br>&nbsp;&nbsp;ourArray.push(i);<br>}</blockquote></div>
+		<h3>Nesting For Loops</h3>
+		<div><blockquote>var arr = [<br>&nbsp;&nbsp;[1,2], [3,4], [5,6]<br>];<br>for (var i=0; i &lt; arr.length; i++) {<br>&nbsp;&nbsp;for (var j=0; j &lt; arr[i].length; j++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(arr[i][j]);<br>&nbsp;&nbsp;}<br>}</blockquote></div>
+	</div>
+	
+	<h2>Do...While Loops</h2>
+	<div class="slide">
+		<p class="info">A "<code>do...while</code>" loop will first "<code>do</code>" one pass of the code inside the loop no matter what, and then it runs "<code>while</code>" a specified condition is true and stops once that condition is no longer true.</p>
+		<div><blockquote>var ourArray = [];<br>var i = 0;<br>do {<br>&nbsp;&nbsp;ourArray.push(i);<br>&nbsp;&nbsp;i++;<br>} while (i &lt; 5);</blockquote></div>
+	</div>
+	
+	<h2>Ternary Operator</h2>
+	<div class="slide">
+		<p class="info">The <dfn>conditional operator</dfn>, also called the <dfn>ternary operator</dfn>, can be used as a one line if-else expression.</p>
+		<div><blockquote>function findGreaterOrEqual(a, b) {<br>&nbsp;&nbsp;return (a === b) ? "a and b are equal" : (a &gt; b) ? "a is greater" : "b is greater";<br>}</blockquote></div>
+	</div>
+	
+	<h2>JavaScript Functions</h2>
+	<div class="slide">
+		<p class="info">In JavaScript, we can divide up our code into reusable parts called <dfn>functions</dfn>.</p>
+		<p class="info">Example of a function:</p>
+		<div><blockquote>function functionName() {<br>&nbsp;&nbsp;console.log("Hello World");<br>}</blockquote></div>
+		<p class="info">You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this:</p>
+		<p class="info"><code>functionName();</code></p>
+		<p class="info">All of the code between the curly braces will be executed every time the function is called.</p>
+		<br>
+		<h3>Function Parameters</h3>
+		<p class="info"><dfn>Parameters</dfn> are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or <dfn>"passed"</dfn>) into a function when it is called are known as <dfn>arguments</dfn>.</p>
+		<div><blockquote>function testParams(param1, param2) {<br>&nbsp;&nbsp;console.log(param1, param2);<br>} <br> testParams("Hello", "everybody!")</blockquote></div>
+		<h3>Function Return</h3>
+		<p class="info">We can pass values into a function with <dfn>arguments</dfn>. You can use a <code>return</code> statement to send a value back out of a function.</p>
+		<div><blockquote>function plus3(num) {<br>&nbsp;&nbsp;return num + 3;<br>}<br>var r = plus3(5); // 8</blockquote></div>
+		<p class="info">A function can include the <code>return</code> statement but it does not have to. In the case that the function doesn't have a <code>return</code> statement, when you call it, the function processes the inner code but the returned value is <code>undefined</code>.</p>
+		<div><blockquote>var sum = 0; <br> function plus3NoReturn(num) {<br>&nbsp;&nbsp;sum = num + 3;<br>}<br>var r = plus3NoReturn(5); // // sum will be modified but returned value is undefined</blockquote></div>
+	</div>
+	
+	<h2>Global / Local Scope and Functions</h2>
+	<div class="slide">
+		<p class="info">In JavaScript, <dfn>scope</dfn> refers to the visibility of variables. </p>
+		<p class="info">Variables which are defined outside of a function block have <dfn>Global</dfn> scope. 
+		This means, they can be seen everywhere in your JavaScript code.</p>
+		<p class="info">Variables with global scope can also be created if they are declared as a property on the <code>window</code> object. </p>
+		<div><blockquote>var a = 1; // global scope <br> b = 2; // global scope <br> window.c = 3; // global scope <br><br> function myTest() {<br>&nbsp;&nbsp;var d = 4; // local scope <br>&nbsp;&nbsp;e = 5; // global scope <br>&nbsp;&nbsp;console.log("global var", b); <br>}<br><br>myTest(); // logs 2<br>console.log(d); // d is not defined</blockquote></div>
+		<p class="info">Variables which are declared within a function, as well as the function parameters have <dfn>local</dfn> scope. That means, they are only visible within that function.</p>
+		<p class="info">It is possible to have both <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the <code>local</code> variable takes precedence over the <code>global</code> variable.</p>
+	</div>
+	
+	<h2>Expression Functions</h2>
+	<div class="slide">
+			<div><blockquote>var expFunction = function(param1) { <br> &nbsp;&nbsp; console.log("My expression function ! " + param1); <br> } <br><br> expFunction("HOORAY !!!");</blockquote></div>
+	</div>
+	
+	<h2>Immediately Invoked Function Expression (IIFE)</h2>
+	<div class="slide">
+		<p class="info">A common pattern in JavaScript is to execute a function as soon as it is declared:</p>
+		<div><blockquote>(function () {<br>&nbsp;&nbsp;console.log("Chirp, chirp!");<br>})(); // this is an anonymous function expression that executes right away<br>// Outputs "Chirp, chirp!" immediately</blockquote></div>
+		<p class="info">Note that the function has no name and is not stored in a variable. The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an <code>immediately invoked function expression</code> or <code>IIFE</code>.</p>
+	</div>
+
+	<h2>Callback Functions</h2>
+	<div class="slide">
+		<p class="info">In Javascript, functions are first-class objects.</p>
+		<p class="info">So we can work with them in the same way we work with other objects, like assigning them to variables and passing them as arguments into other functions.</p>
+		<p class="info">A <code>callback function</code> is a function that is passed <em>as an argument</em> to another function, 
+		to be “called back” at a later time. 
+		A function that accepts other functions as arguments is called a <dfn>higher-order function</dfn>, which contains the logic for <em>when</em> the callback function gets executed.</p>
+		<div>
+			<blockquote>
+				function createQuote(quote, callback){ <br>
+				&nbsp;&nbsp;var myQuote = "Like I always say, " + quote;<br>
+				&nbsp;&nbsp;callback(myQuote); // 2<br>
+				}<br><br>
+
+				function logQuote(quote){<br>
+				&nbsp;&nbsp;console.log(quote);<br>
+				}<br><br>
+
+				createQuote("eat your vegetables!", logQuote); // 1<br><br>
+
+				// Result in console: <br>
+				// Like I always say, eat your vegetables!
+			</blockquote>
+		</div>
+		<p>Additionally, we can pass in anonymous functions as callbacks. The below call to <code>createQuote</code> would have the same result as the above example:</p>
+		<div>
+			<blockquote>createQuote("eat your vegetables!", function(quote){ <br> &nbsp;&nbsp;console.log(quote); <br>});</blockquote>
+		</div>
+		<h3>Callback Functions – Why ?</h3>
+		<p class="info">Most of the time we are creating programs and applications that operate in a synchronous manner. <br> In other words, some of our operations are started only after the preceding ones have completed. <br><br>Often when we request data from other sources, such as an external API, we don’t always know when our data will be served back. <br>In these instances we want to wait for the response, but we don’t always want our entire application grinding to a halt while our data is being fetched. <br> These situations are where callback functions come in handy. </p>
+		<div>
+			<blockquote>
+				function request(query, callback) { <br>
+					&nbsp;&nbsp;setTimeout(function() { <br>
+					 &nbsp;&nbsp;&nbsp;&nbsp;var response = query + "full!"; <br>
+					 &nbsp;&nbsp;&nbsp;&nbsp;callback(response); <br>
+					&nbsp;&nbsp;}, 5000); <br>
+				} <br><br>
+
+				function getResults(results) { <br>
+					&nbsp;&nbsp;console.log("Response from the server: " + results); <br>
+				} <br><br>
+
+				request("The glass is half ", getResults); <br><br>
+
+				// Result in console after 5 second delay:<br>
+				// Response from the server: The glass is half full!
+			</blockquote>
+		</div>
+	</div>
+	<script src="src/index.js">
+	<script src="src/hoisting.js">
+	<script src="src/thisValues.js">
+	
+	</script>
+</body>
+
+</html>
