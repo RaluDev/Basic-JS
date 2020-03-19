@@ -146,7 +146,12 @@ function greetPerson2(name) {
   }
   return greet; // returns a function!
 }
+
 var greetAna = greetPerson2("Ana");
+var greetAna = function(greeting) {
+  console.log(greeting + "Ana");
+}
+
 greetAna("Hello"); // Hello Ana
 greetAna("Bye"); // Bye Ana
 var greetBen = greetPerson2("Ben");

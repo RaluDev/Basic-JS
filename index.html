@@ -4,7 +4,7 @@
 <head>
 	<title>Basic Javascript Examples</title>
 	<meta charset="UTF-8" />
-	<link ref="stylesheet" href="src/styles.css" />
+	<link rel="stylesheet" type="text/css" href="src/styles.css" />
 </head>
 
 <body>
@@ -64,20 +64,23 @@
 				<blockquote>
 					var sampleStr = "Andrei said, \"students are learning JavaScript\"."; <br><br>
 				 /* <br>
-				  Printing this to the console, you would get: Andrei said, "students are learning JavaScript". <br>
+				  Printing this to the console, you would get: <br ><br> Andrei said, "students are learning JavaScript". <br>
 				 */
 				</blockquote>
 		</div>
 		<hr>
 		<p class="info">The <code>+</code> operator can be used with a <code>String</code> value, and it is called the <dfn>concatenation</dfn> operator.</p>
 		<div>
-			<blockquote>var concatString = 'My name is Mircea,' + ' and I\'m a front-end developer.'</blockquote>
+			<blockquote>var concatString = 'My name is Mircea,' + ' and I\'m a front-end developer.'<br><br>
+				console.log(concatString); // My name is Mircea and I'm a front-end developer</blockquote>
 		</div>
 		<p class="info">We can also use the <code>+=</code> operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable.</p>
 		<div>
 			<blockquote>
 				var concatString = 'My name is Mircea,'; <br>
-			 	concatString += ' and I\'m a front-end developer.';</blockquote>
+				 concatString += ' and I\'m a front-end developer.'; <br><br>
+				console.log(concatString); // My name is Mircea and I'm a front-end developer
+			</blockquote>
 		</div>
 		<hr>
 		<p class="info">You can find the length of a <code>String</code> value by writing <code>.length</code> after the string variable or string literal.</p>
@@ -87,6 +90,9 @@
 			 	console.log(concatString.length); // 15 </blockquote>
 		</div>
 		<p class="info"><code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.</p>
+		<blockquote>
+			 console.log(concatString[6]); // e </blockquote>
+
 		<p class="info">In JavaScript, <dfn>Zero-based</dfn> indexing is used. It means the first character will be at index 0.</p>
 	</div>
 
@@ -208,7 +214,9 @@
 	<div class="slide">
 		<p class="info"><code>If</code> statements are used to make decisions in code. 
 		The keyword <code>if</code> tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as <code>Boolean</code> conditions and they may only be <code>true</code> or <code>false</code>.</p>
-		<div><blockquote>if (myCondition) {<br>&nbsp;&nbsp;&nbsp;&nbsp; return "It was true";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return "It was false";<br>}</blockquote></div>
+		<div><blockquote>if (myCondition) {<br>&nbsp;&nbsp; return "It was true";<br>} else { <br> &nbsp;&nbsp; return "It was false"; <br> }  </blockquote></div>
+		<p class="info">A short from of <code>if / else</code> statement, only and ony when using the return statement in a function. The code that is below the return statement, will not be executed.</p>
+		<div><blockquote>function() { <br>&nbsp;&nbsp;if (myCondition) {<br>&nbsp;&nbsp;&nbsp;&nbsp; return "It was true";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return "It was false";<br>}</blockquote></div>
 
 		<h3>Logical Order in If Else Statements</h3>
 		<p class="info">Order is important in <code>if</code>, <code>else if</code> statements.</p>
@@ -260,7 +268,12 @@
 		<p class="info">In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. 
 		Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> statements are found. 
 		Think of it like the final <code>else</code> statement in an <code>if/else</code> chain.</p>
-		<div><blockquote>switch(val) {<br>&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;case 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = "1, 2, or 3";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case 4:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = "4 alone";<br>&nbsp;&nbsp;...<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;defaultStatement;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;}</blockquote></div>
+
+		<div><blockquote>var val = 5;</blockquote></div>
+
+		<div style="width: 50%; float:left;"><blockquote>switch(val) {<br>&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;case 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = "1, 2, or 3";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case 4:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = "4 alone";<br>&nbsp;&nbsp;...<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;defaultStatement;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>}</blockquote></div>
+		<div style="width: 50%; float:right;"><blockquote>switch(true) {<br>&nbsp;&nbsp;case (val > 2 && val < 3):<br>&nbsp;&nbsp;case (val > 3 && val < 4):<br>&nbsp;&nbsp;case (val > 5 && val < 6):<br>&nbsp;&nbsp;&nbsp;&nbsp;result = "2-3, 3-4, 5-6";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case (val > 6 && val < 7):<br>&nbsp;&nbsp;&nbsp;&nbsp;result = "6-7";<br>&nbsp;&nbsp;...<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;defaultStatement;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>}</blockquote></div>
+		<div style="clear: both;"></div>
 	</div>
 	
 	<h2>While Loops</h2>
@@ -274,7 +287,10 @@
 		<p class="info">The most common type of JavaScript loop is called a "<code>for loop</code>" because it runs "for" a specific number of times.</p>
 		<div><blockquote>var ourArray = [];<br>for (var i = 0; i &lt; 5; i++) {<br>&nbsp;&nbsp;ourArray.push(i);<br>}</blockquote></div>
 		<h3>Nesting For Loops</h3>
-		<div><blockquote>var arr = [<br>&nbsp;&nbsp;[1,2], [3,4], [5,6]<br>];<br>for (var i=0; i &lt; arr.length; i++) {<br>&nbsp;&nbsp;for (var j=0; j &lt; arr[i].length; j++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(arr[i][j]);<br>&nbsp;&nbsp;}<br>}</blockquote></div>
+		<div><blockquote>var arr = [<br>&nbsp;&nbsp;[1,2], [3,4], [5,6]<br>];</blockquote></div>
+		<div style="width: 50%; float:right;"><blockquote>for (var i=0; i &lt; arr.length; i++) {<br>&nbsp;&nbsp;for (var j=0; j &lt; arr[i].length; j++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(arr[i][j]);<br>&nbsp;&nbsp;}<br>}</blockquote></div>
+		<div style="width: 50%; float:left;"><blockquote>for (var i=0; i &lt; arr.length; i++) {<br>&nbsp;&nbsp;var innerArray = arr[i]; <br> &nbsp;&nbsp;for (var j=0; j &lt; innerArray.length; j++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(innerArray[j]);<br>&nbsp;&nbsp;}<br>}</blockquote></div>
+		<div style="clear: both;"></div>
 	</div>
 	
 	<h2>Do...While Loops</h2>
@@ -381,10 +397,7 @@
 			</blockquote>
 		</div>
 	</div>
-	<script src="src/index.js">
-	<script src="src/hoisting.js">
-	<script src="src/thisValues.js">
-	
+
 	</script>
 </body>
 
